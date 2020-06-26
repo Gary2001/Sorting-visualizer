@@ -7,9 +7,17 @@
 </head>
 <body>
     <h1>Sorting Visualizer</h1>
-    <input type="range" min="1" max="400" value="200" class="slider" id="length-slider">
+    <label for="length-slider">Length</label>
+    <input type="range" min="0" max="400" value="200" class="slider" id="length-slider">
     <label for="length-slider" id="length-slider-label">200</label>
+    <br>
+    <label for="speed-slider">Speed</label>
+    <input type="range" min="0" max="100" value="50" class="slider" id="speed-slider">
+    <label for="speed-slider" id="speed-slider-label">50</label>
+    <br>
     <button id="insertion-sort-btn">Insertion Sort</button>
+    <button id="bubble-sort-btn">Bubble Sort</button>
+    <button id="selection-sort-btn">Selection Sort</button>
     <button id="shuffle-btn">Shuffle</button>
     <br><br>
     <canvas id="canvas"></canvas>
