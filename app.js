@@ -10,16 +10,16 @@ let isSorting = false
 
 // Shuffles array with random values
 function shuffle() {
-    isSorting = false
+    isSorting=false
     for (let i=0; i<LENGTH; i++) {
-        values[i] = Math.random() * canvas.height
+        values[i]=Math.random()* (canvas.height-10)
     }    
 }
-// draws different sized rectangles corresponding to number in values
+// draws length of rectangle is based on size of value
 function draw() {
     ctx.clearRect(0,0,canvas.width,canvas.height)
     for (let i=0; i<values.length; i++) {
-        ctx.fillRect(i*canvas.width/LENGTH, 0, canvas.width/LENGTH-1, values[i])
+        ctx.fillRect(i*canvas.width/LENGTH, canvas.height-values[i], canvas.width/LENGTH-1, canvas.height)
     }
 }
 shuffle()
@@ -35,13 +35,15 @@ lengthSlider.addEventListener('input', ()=>{
     shuffle()
     draw()
 })
-document.getElementById('insertion-sort-btn').addEventListener("click", () =>{
-    insertionSort(values)
-})
 document.getElementById('shuffle-btn').addEventListener("click", () =>{
     shuffle()
     draw()
 })
+document.getElementById('insertion-sort-btn').addEventListener("click", () =>{
+    insertionSort(values)
+    draw()
+})
+
 
 // SORTING ALGORITHMS:
 // every 10 milliseconds completes one outer loop iteration of insertionSort
